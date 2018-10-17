@@ -7,7 +7,7 @@ import { EventEmitter } from 'eventemitter3';
 import { check, Match } from 'meteor/check';
 import { fixJSONParse, fixJSONStringify, helpers } from './lib.js';
 
-const _rootUrl = (window.__meteor_runtime_config__.MOBILE_ROOT_URL || window.__meteor_runtime_config__.ROOT_URL).replace(/\/+$/, '');
+const _rootUrl = (window.__meteor_runtime_config__.MOBILE_ROOT_URL || window.__meteor_runtime_config__.ROOT_URL || __meteor_runtime_config__.DDP_DEFAULT_CONNECTION_URL).replace(/\/+$/, '');
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 /*
